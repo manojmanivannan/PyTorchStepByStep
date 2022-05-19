@@ -11,6 +11,8 @@ def fit_model(x_train, y_train):
     # Fits a linear regression to find the actual b and w that minimize the loss
     regression = LinearRegression()
     regression.fit(x_train, y_train)
+    print(regression.intercept_)
+    print(regression.coef_)
     b_minimum, w_minimum = regression.intercept_[0], regression.coef_[0][0]
     return b_minimum, w_minimum
 
