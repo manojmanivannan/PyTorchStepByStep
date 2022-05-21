@@ -88,6 +88,7 @@ def figure3(x_train, y_train, b, w):
 
 def figure4(x_train, y_train, b, w, bs, ws, all_losses):
     b_minimum, w_minimum = fit_model(x_train, y_train)
+
     
     
     figure = plt.figure(figsize=(12, 6))

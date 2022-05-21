@@ -10,8 +10,6 @@ def fit_model(x_train, y_train):
     # Fits a linear regression to find the actual b and w that minimize the loss
     regression = LinearRegression()
     regression.fit(x_train, y_train)
-    print(regression.intercept_)
-    print(regression.coef_)
     b_minimum, w_minimum = regression.intercept_[0], regression.coef_[0][0]
     return b_minimum, w_minimum
 
@@ -19,7 +17,6 @@ def find_index(b, w, bs, ws):
     # Looks for the closer indexes for the updated b and w inside their respective ranges
     b_idx = np.argmin(np.abs(bs[0, :] - b))
     w_idx = np.argmin(np.abs(ws[:, 0] - w))
-
     # Closest values for b and w
     fixedb, fixedw = bs[0, b_idx], ws[w_idx, 0]
     
@@ -68,7 +65,7 @@ def figure2(x_train, y_train, b, w, color='k'):
 def figure4(x_train, y_train, b, w, bs, ws, all_losses):
 
     b_minimum, w_minimum = fit_model(x_train, y_train)
-    print(f'Figure model\'s prediction {b_minimum},{w_minimum}' )
+    print(f'Figure model\'s prediction b={b_minimum}, w={w_minimum}' )
     
     
     figure = plt.figure(figsize=(12, 6))
